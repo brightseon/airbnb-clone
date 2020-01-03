@@ -1,3 +1,8 @@
 {
-    "python.pythonPath": "C:\\Users\\home\\.virtualenvs\\bsdir-ST8ROR0h\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\home\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Args": ["--max-line-length=88"]
 }
