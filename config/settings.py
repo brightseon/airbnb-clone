@@ -39,6 +39,9 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# 다른 사람이 만든 Application
+THIRD_PARTY_APPS = []
+
 PROJECT_APPS = [
     'users.apps.UsersConfig',
 ]
