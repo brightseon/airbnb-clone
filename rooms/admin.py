@@ -18,7 +18,7 @@ class RoomAdmin(admin.ModelAdmin):
             'Basic Info',
             { 'fields' : ( 'name', 'description', 'country', 'address', 'price' ) }
         ),
-        ('Times',{ 'fields', ('check_in', 'check_out', 'instant_book') }),
+        ('Times', { 'fields' : ('check_in', 'check_out', 'instant_book') }),
         ('Spaces', { 'fields' : ('guests', 'beds', 'bedrooms', 'baths') }),
         (
             'More About the Space',
@@ -41,23 +41,32 @@ class RoomAdmin(admin.ModelAdmin):
         'baths',
         'check_in',
         'check_out',
-        'instant_book'
+        'instant_book',
+        'count_amenities'
     )
 
     list_filter = (
         'instant_book',
-        'hose__superhost',
+        'host__superhost',
         'room_type',
         'amenities',
         'facilities',
         'house_rules',
         'city',
-        'country',
+        'country'
     )
+
+    ordering = ('name', 'price', 'bedrooms')
 
     search_fields = ('=city', '^host__username')
 
     filter_horizontal = ('amenities', 'facilities', 'house_rules')
+
+    def count_amenities(self, obj) : 
+        print(obj.amenities.all())
+        return ''
+    
+    count_amenities.short_description = 'hello sexy'
 
 @admin.register(models.Photo)
 class PhotoAdmin(admin.ModelAdmin):
