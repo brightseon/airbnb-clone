@@ -5,7 +5,7 @@ class Review(core_models.TimeStampedModel):
 
     """ Review Model Definition """
 
-    reivew = models.TextField()
+    review = models.TextField()
     accuracy = models.IntegerField()
     communication = models.IntegerField()
     cleanliness = models.IntegerField()
