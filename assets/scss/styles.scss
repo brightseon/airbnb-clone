@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+.search-box {
+    transition: box-shadow .5s linear;
+}
+
 @tailwind utilities;
