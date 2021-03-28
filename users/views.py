@@ -26,6 +26,7 @@ class LoginView(FormView) :
         return super().form_valid(form)
 
 def log_out(request):
+    messages.info(request, 'See you later')
     logout(request)
     return redirect(reverse('core:home'))
 
