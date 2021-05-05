@@ -33,6 +33,8 @@ class Facility(AbstractItem):
 
     """ Facility Model Definition """
 
+    pass
+
     class Meta:
         verbose_name_plural = 'Facilities'
 
@@ -101,5 +103,8 @@ class Room(core_models.TimeStampedModel):
     
     def first_photo(self):
         photo, = self.photos.all()[:1]
-
         return photo.file.url
+
+    def get_next_four_photos(self):
+        photos = self.photos.all()[1:5]
+        return photos
