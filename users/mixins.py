@@ -19,7 +19,7 @@ class LoggedOutOnlyView(UserPassesTestMixin):
 
     def handle_no_permission(self):
         messages.error(self.request, "Can't go there")
-        return redirect('core:hoome')
+        return redirect('core:hoom')
 
 class LoggedInOnlyView(LoginRequiredMixin):
 
